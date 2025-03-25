@@ -10,9 +10,88 @@
     <title>Live Chat Room</title>
 </head>
 
+<header class="container mt-5 text-center">
+    <!-- container & title-->
+    <h1 class="mb-5">Live ChatRoom</h1>
+
+    <p>Choose a chatroom</p>
+    <!-- buttons for chatrooms -->
+    <div class="chat-rooms btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+        <label class="btn btn-outline-info" for="btnradio1">#general</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn btn-outline-info" for="btnradio2">#gaming</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+        <label class="btn btn-outline-info" for="btnradio3">#crocheting</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+        <label class="btn btn-outline-info" for="btnradio4">#music</label>
+    </div>
+</header>
+
 <body>
+    <div class="container mt-5">
+        <!-- chat list / window -->
+        <div class="chat-window border rounded">
+            <ul class="chat-list list-group list-group-flush px-3">
+                <!-- layout to be added in JS -->
+                <li class="list-group-item">
+                    <span><strong>loren</strong></span>
+                    <span>lorem ipsum</span>
+                    <p class="text-muted"><small>less than a minute ago</small></p>
+                </li>
+                <li class="list-group-item">
+                    <span><strong>loren</strong></span>
+                    <span>lorem ipsum</span>
+                    <p class="text-muted"><small>less than a minute ago</small></p>
+                </li>
+            </ul>
+        </div>
+        <!-- new chat form -->
+        <form class="chat-form">
+            <div class="input-group my-3">
+                <input type="text" class="form-control" placeholder="type a message" required>
+                <button type="submit" class="btn btn-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-send-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z" />
+                    </svg>
+                </button>
+            </div>
+        </form>
 
+        <!-- update name form -->
+        <form class="name-form">
+            <div class="input-group my-3">
+                <span class="input-group-text">Your name</span>
+                <input type="text" class="form-control">
+                <button class="btn btn-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                    </svg>
+                </button>
+            </div>
+            <div class="feedback"></div>
+        </form>
+    </div>
 
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyDz-zODH6UjlEjZAqr_Hswc1BuN379fWhI",
+            authDomain: "udemy-js-course-tnn.firebaseapp.com",
+            databaseURL: "https://udemy-js-course-tnn.firebaseio.com",
+            projectId: "udemy-js-course-tnn",
+            storageBucket: "udemy-js-course-tnn.firebasestorage.app",
+            messagingSenderId: "441224518337"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+    </script>
     <script src="scripts/chat.js"></script>
     <script src="scripts/ui.js"></script>
     <script src="scripts/app.js"></script>
