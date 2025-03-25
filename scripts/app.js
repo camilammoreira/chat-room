@@ -23,8 +23,8 @@ class Chatroom {
     }
 }
 
-const general = new Chatroom("general", "camila");
+// const general = new Chatroom("general", "camila");
 
-general.addChat("hey there")
-    .then(() => console.log("chat added"))
-    .catch(err => console.log(err));
+// general.addChat("hey there")
+//     .then(() => console.log("chat added"))
+//     .catch(err => console.log(err));
