@@ -35,12 +35,12 @@
     <div class="container mt-5">
         <!-- chat list / window -->
         <div class="chat-window border rounded">
-            <ul class="chat-list list-group list-group-flush px-3"> </ul>
+            <ul class="chat-list list-group list-group-flush overflow-auto px-3"> </ul>
         </div>
         <!-- new chat form -->
         <form class="chat-form">
             <div class="input-group my-3">
-                <input type="text" class="form-control" placeholder="type a message" required>
+                <input type="text" class="form-control" id="message" placeholder="type a message" required>
                 <button type="submit" class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-send-fill" viewBox="0 0 16 16">
                         <path
@@ -54,7 +54,7 @@
         <form class="name-form">
             <div class="input-group my-3">
                 <span class="input-group-text">Your name</span>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="name">
                 <button class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-person-fill" viewBox="0 0 16 16">
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
