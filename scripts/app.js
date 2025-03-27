@@ -72,6 +72,5 @@ nameForm.name.value = username;
 
 // warn unsaved name
 nameForm.addEventListener("keyup", () => {
-    nameForm.name.style.color = "black";
     nameForm.save.classList.remove("disabled");
 })
