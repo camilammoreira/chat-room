@@ -13,6 +13,7 @@ class ChatUI {
                 includeSeconds: true
             }
         );
+
         const html = `
             <li class="list-group-item">
                 <span><strong>${chat.username}</strong></span>
@@ -21,7 +22,8 @@ class ChatUI {
             </li>
         `;
         this.list.innerHTML += html;
+
+        const height = this.list.scrollHeight;
+        this.list.scrollTop = height;
     }
 }
-
-const list = document.querySelector("ul");
