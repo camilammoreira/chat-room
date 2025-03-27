@@ -1,8 +1,20 @@
+const htmlTag = document.querySelector("html");
+const themeBtn = document.querySelector(".theme");
 const chatList = document.querySelector("ul");
 const chatForm = document.querySelector(".chat-form");
 const nameForm = document.querySelector(".name-form");
 const nameFeedback = document.querySelector(".name-feedback");
 const room = document.querySelector(".chat-rooms")
+
+// change theme
+themeBtn.addEventListener("click", () => {
+    if (htmlTag.getAttribute("data-bs-theme") === "dark") {
+        htmlTag.setAttribute("data-bs-theme", "light");
+
+    } else {
+        htmlTag.setAttribute("data-bs-theme", "dark")
+    }
+})
 
 // send new chat
 chatForm.addEventListener("submit", (e) => {

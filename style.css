@@ -1,5 +1,21 @@
+body {
+    width: 100vw;
+}
+
 .container {
     max-width: 600px;
+}
+
+.theme {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    cursor: pointer;
+
+    position: absolute;
+    top: 30px;
+    right: 30px;
+
 }
 
 .chat-list {
