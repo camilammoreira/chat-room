@@ -26,4 +26,7 @@ class ChatUI {
         const height = this.list.scrollHeight;
         this.list.scrollTop = height;
     }
+    clear() {
+        this.list.innerHTML = "";
+    }
 }

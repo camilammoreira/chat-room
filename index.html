@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -17,17 +17,17 @@
     <p>Choose a chatroom</p>
     <!-- buttons for chatrooms -->
     <div class="chat-rooms btn-group" role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-        <label class="btn btn-outline-info" for="btnradio1">#general</label>
+        <input type="radio" class="btn-check" name="btnradio" id="general" autocomplete="off" checked>
+        <label class="btn btn-outline-info" for="general">#general</label>
 
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-        <label class="btn btn-outline-info" for="btnradio2">#gaming</label>
+        <input type="radio" class="btn-check" name="btnradio" id="gaming" autocomplete="off">
+        <label class="btn btn-outline-info" for="gaming">#gaming</label>
 
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-        <label class="btn btn-outline-info" for="btnradio3">#crocheting</label>
+        <input type="radio" class="btn-check" name="btnradio" id="crocheting" autocomplete="off">
+        <label class="btn btn-outline-info" for="crocheting">#crocheting</label>
 
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-        <label class="btn btn-outline-info" for="btnradio4">#music</label>
+        <input type="radio" class="btn-check" name="btnradio" id="music" autocomplete="off">
+        <label class="btn btn-outline-info" for="music">#music</label>
     </div>
 </header>
 
@@ -55,7 +55,7 @@
             <div class="input-group my-3">
                 <span class="input-group-text">Your name</span>
                 <input type="text" class="form-control" id="name" placeholder=" " required>
-                <button class="btn btn-info">
+                <button class="btn btn-info disabled" id="save">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-floppy2-fill" viewBox="0 0 16 16">
                         <path d="M12 2h-2v3h2z" />
                         <path
@@ -63,7 +63,7 @@
                     </svg>
                 </button>
             </div>
-            <p class="name-feedback"></p>
+            <divp class="name-feedback text-info"></divp>
         </form>
     </div>
 

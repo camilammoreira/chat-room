@@ -8,5 +8,16 @@
 
 #name {
     color: gray;
+}
 
+#name:focus {
+    color: black;
+}
+
+.name-feedback {
+    font-size: 0.7;
+}
+
+[data-bs-theme=dark] #name:focus {
+    color: white;
 }
