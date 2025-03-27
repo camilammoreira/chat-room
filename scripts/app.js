@@ -45,15 +45,15 @@ room.addEventListener("click", (e) => {
     }
 })
 
+// check if name is updated in local storage
+const username = localStorage.username ? localStorage.username : "anon";
+
 // class instances
 const chatUI = new ChatUI(chatList);
 const chatroom = new Chatroom("general", username);
 
 // get chats and render
 chatroom.getChats(chat => chatUI.render(chat));
-
-// check if name is updated in local storage
-const username = localStorage.username ? localStorage.username : "anon";
 
 // preset name input
 nameForm.name.value = username;
