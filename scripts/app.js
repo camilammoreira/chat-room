@@ -6,16 +6,6 @@ const nameForm = document.querySelector(".name-form");
 const nameFeedback = document.querySelector(".name-feedback");
 const room = document.querySelector(".chat-rooms")
 
-// change theme
-themeBtn.addEventListener("click", () => {
-    if (htmlTag.getAttribute("data-bs-theme") === "dark") {
-        htmlTag.setAttribute("data-bs-theme", "light");
-
-    } else {
-        htmlTag.setAttribute("data-bs-theme", "dark")
-    }
-})
-
 // send new chat
 chatForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -57,20 +47,36 @@ room.addEventListener("click", (e) => {
     }
 })
 
-// check if name is updated in local storage
-const username = localStorage.username ? localStorage.username : "anon";
-
 // class instances
 const chatUI = new ChatUI(chatList);
-const chatroom = new Chatroom("general", username);
+const chatroom = new Chatroom("general", localStorage.username);
 
 // get chats and render
 chatroom.getChats(chat => chatUI.render(chat));
 
 // preset name input
-nameForm.name.value = username;
+nameForm.name.value = chatroom.username;
 
 // warn unsaved name
 nameForm.addEventListener("keyup", () => {
     nameForm.save.classList.remove("disabled");
+    htmlTag.getAttribute("data-bs-theme") === "dark" ? nameForm.name.style.color = "#FFF" : nameForm.name.style.color = "#000";
+})
+
+// load theme from local storage
+const setTheme = (theme = "light") => {
+    htmlTag.setAttribute("data-bs-theme", theme);
+}
+
+setTheme(localStorage.theme);
+
+// change theme
+themeBtn.addEventListener("click", () => {
+    if (htmlTag.getAttribute("data-bs-theme") === "dark") {
+        htmlTag.setAttribute("data-bs-theme", "light");
+        localStorage.setItem("theme", "light");
+    } else {
+        htmlTag.setAttribute("data-bs-theme", "dark");
+        localStorage.setItem("theme", "dark");
+    }
 })

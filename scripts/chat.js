@@ -1,5 +1,5 @@
 class Chatroom {
-    constructor(room, username) {
+    constructor(room, username = "anon") {
         this.room = room;
         this.username = username;
         this.chats = db.collection("chats");
