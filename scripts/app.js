@@ -36,6 +36,8 @@ nameForm.addEventListener("submit", (e) => {
         setTimeout(() => nameFeedback.innerHTML = "", 3000);
     }
 
+    nameForm.save.classList.add("disabled")
+
 })
 
 // update room
@@ -58,7 +60,7 @@ chatroom.getChats(chat => chatUI.render(chat));
 nameForm.name.value = chatroom.username;
 
 // warn unsaved name
-nameForm.addEventListener("keyup", () => {
+nameForm.addEventListener("keydown", () => {
     nameForm.save.classList.remove("disabled");
     htmlTag.getAttribute("data-bs-theme") === "dark" ? nameForm.name.style.color = "#FFF" : nameForm.name.style.color = "#000";
 })

@@ -1,5 +1,15 @@
+:root {
+    --light-color: #F7F4F0;
+    --primary-color: #406C29;
+}
+
+[data-bs-theme="dark"] {
+    --light-color: #121212;
+}
+
 body {
     width: 100vw;
+    background: var(--light-color);
 }
 
 .container {
@@ -22,6 +32,10 @@ body {
     max-height: 300px;
 }
 
+.list-group-item {
+    background: var(--bg);
+}
+
 #name {
     color: gray;
 }
@@ -31,7 +45,7 @@ body {
 }
 
 .name-feedback {
-    font-size: 0.7;
+    font-size: 0.7em;
 }
 
 [data-bs-theme=dark] #name:focus {
